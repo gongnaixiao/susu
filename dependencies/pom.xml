@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.gongnaixiao.susu</groupId>
+    <artifactId>dependencies</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <spring-boot.version>2.7.12</spring-boot.version>
+        <spring-cloud.version>2021.0.7</spring-cloud.version>
+        <spring-cloud-alibaba.version>2021.0.5.0</spring-cloud-alibaba.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <spring-boot-admin.version>2.7.10</spring-boot-admin.version>
+        <spring.authorization.version>0.4.2</spring.authorization.version>
+        <dynamic-ds.version>3.6.0</dynamic-ds.version>
+        <captcha.version>2.2.2</captcha.version>
+        <velocity.version>2.3</velocity.version>
+        <velocity.tool.version>3.1</velocity.tool.version>
+        <configuration.version>1.10</configuration.version>
+        <jasypt.version>3.0.5</jasypt.version>
+        <swagger.fox.version>3.0.0</swagger.fox.version>
+        <knife4j.ui.version>3.0.3</knife4j.ui.version>
+        <xxl-job.version>2.4.0</xxl-job.version>
+        <lombok.version>1.18.24</lombok.version>
+        <liteflow.version>2.10.5</liteflow.version>
+
+        <git.commit.plugin>4.9.9</git.commit.plugin>
+        <spring.checkstyle.plugin>0.0.38</spring.checkstyle.plugin>
+        <jaxb.version>2.3.5</jaxb.version>
+        <hutool.version>5.8.19</hutool.version>
+        <mica.version>2.7.4</mica.version>
+        <sentinel.version>1.8.4</sentinel.version>
+        <fastjson.version>1.2.83</fastjson.version>
+        <springdoc.version>1.6.9</springdoc.version>
+        <swagger.core.version>2.2.0</swagger.core.version>
+        <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
+        <mysql.version>8.0.33</mysql.version>
+        <seata.version>1.6.1</seata.version>
+        <excel.version>1.2.6</excel.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- spring boot 依赖 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- spring cloud 依赖 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- spring cloud alibaba 依赖 -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!--springdoc -->
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-webmvc-core</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger.core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-webflux-ui</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-security</artifactId>
+                <version>${springdoc.version}</version>
+            </dependency>
+            <!--fastjson 版本-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <!-- excel 导入导出 -->
+            <dependency>
+                <groupId>com.pig4cloud.excel</groupId>
+                <artifactId>excel-spring-boot-starter</artifactId>
+                <version>${excel.version}</version>
+            </dependency>
+            <!--  seata kryo 序列化-->
+            <dependency>
+                <groupId>io.seata</groupId>
+                <artifactId>seata-serializer-kryo</artifactId>
+                <version>${seata.version}</version>
+            </dependency>
+            <!--orm 相关-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-extension</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-annotation</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!--hutool bom 工具类-->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-bom</artifactId>
+                <version>${hutool.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--mica bom 工具类-->
+            <dependency>
+                <groupId>net.dreamlu</groupId>
+                <artifactId>mica-bom</artifactId>
+                <version>${mica.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--web 模块-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot.version}</version>
+                <exclusions>
+                    <!--排除tomcat依赖-->
+                    <exclusion>
+                        <artifactId>spring-boot-starter-tomcat</artifactId>
+                        <groupId>org.springframework.boot</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>${project.name}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                    <configuration>
+                        <finalName>${project.build.finalName}</finalName>
+                        <layers>
+                            <enabled>true</enabled>
+                        </layers>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.15.0</version>
+                <configuration>
+                    <generateBackupPoms>false</generateBackupPoms>
+                </configuration>
+            </plugin>
+            <!--打包jar 与git commit 关联插件-->
+            <plugin>
+                <groupId>io.github.git-commit-id</groupId>
+                <artifactId>git-commit-id-maven-plugin</artifactId>
+                <version>${git.commit.plugin}</version>
+                <executions>
+                    <execution>
+                        <id>get-the-git-infos</id>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                        <phase>initialize</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    <failOnNoGitDirectory>false</failOnNoGitDirectory>
+                    <generateGitPropertiesFile>true</generateGitPropertiesFile>
+                    <!--因为项目定制了jackson的日期时间序列化/反序列化格式，因此这里要进行配置,不然通过management.info.git.mode=full进行完整git信息监控时会存在问题-->
+                    <dateFormat>yyyy-MM-dd HH:mm:ss</dateFormat>
+                    <includeOnlyProperties>
+                        <includeOnlyProperty>^git.build.(time|version)$</includeOnlyProperty>
+                        <includeOnlyProperty>^git.commit.(id|message|time).*$</includeOnlyProperty>
+                    </includeOnlyProperties>
+                </configuration>
+            </plugin>
+            <!--
+            	代码格式插件，默认使用spring 规则，可运行命令进行项目格式化：./mvnw spring-javaformat:apply 或 mvn spring-javaformat:apply，可在IDEA中安装插件以下插件进行自动格式化：
+            	https://repo1.maven.org/maven2/io/spring/javaformat/spring-javaformat-intellij-idea-plugin
+            -->
+            <plugin>
+                <groupId>io.spring.javaformat</groupId>
+                <artifactId>spring-javaformat-maven-plugin</artifactId>
+                <version>${spring.checkstyle.plugin}</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

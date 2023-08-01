@@ -1,0 +1,52 @@
+[
+  {
+    "type": "input",
+    "label": "邮箱",
+    "icon": "email",
+    "key": "input_ZAg5swPpIw2Ecb4Ri6zu3",
+    "id": "ZAg5swPpIw2Ecb4Ri6zu3",
+    "options": {
+      "clearable": true,
+      "renderType": 2,
+      "disabled": false,
+      "showPassword": false,
+      "defaultValue": "",
+      "placeholder": "请输入",
+      "labelWidth": 100,
+      "isShowLabel": true,
+      "required": false
+    },
+    "style": {
+      "width": {
+        "pc": "100%",
+        "mobile": "100%"
+      }
+    },
+    "width": 200,
+    "isShow": true
+  },
+  {
+    "type": "region",
+    "label": "省市区",
+    "icon": "location",
+    "key": "region_wKgDmuVCQdYnCaGDn7GNn",
+    "id": "wKgDmuVCQdYnCaGDn7GNn",
+    "options": {
+      "placeholder": "请选择",
+      "required": false,
+      "isShowLabel": true,
+      "labelWidth": 100,
+      "defaultValue": "",
+      "selectType": 3,
+      "filterable": true
+    },
+    "style": {
+      "width": {
+        "pc": "100%",
+        "mobile": "100%"
+      }
+    },
+    "width": 200,
+    "isShow": true
+  }
+]
