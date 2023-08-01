@@ -31,7 +31,7 @@ public class FormController {
 	private FormSubmitService formSubmitService;
 
 	@PostMapping("/form")
-	public Resp createForm(Req<FormType> req) {
+	public Resp createForm(@RequestBody Req<FormType> req) {
 		Form form = new Form();
 		form.setName(req.getName());
 		form.setContent(JSONUtil.toJsonStr(req.getContent()));
@@ -59,8 +59,8 @@ public class FormController {
 		return Resp.ok(form);
 	}
 
-	@PostMapping("/form/{formId}")
-	public Resp modifyFormDataByid(@PathVariable Long formId, Req req) {
+	@PutMapping("/form/{formId}")
+	public Resp modifyFormDataByid(@PathVariable Long formId, @RequestBody Req req) {
 		Form form = new Form();
 		form.setId(formId);
 		form.setName(req.getName());
@@ -74,6 +74,13 @@ public class FormController {
 		return Resp.ok(form);
 	}
 
+	@DeleteMapping("/form/{formId}")
+	public Resp delFormDataByid(@PathVariable Long formId) {
+		formService.removeById(formId);
+
+		return Resp.ok();
+	}
+
 	@GetMapping("/form/{formId}/fields")
 	public Resp getFieldsByFormid(@PathVariable Long formId) {
 		List<Field> list = fieldService.list(Wrappers.<Field>lambdaQuery().eq(Field::getFormId, formId));
@@ -81,8 +88,8 @@ public class FormController {
 		return Resp.ok(list);
 	}
 
-	@PostMapping("/form/{formId}/fields")
-	public Resp modifyFieldsByFormid(@PathVariable Long formId, Req req) {
+	@PutMapping("/form/{formId}/fields")
+	public Resp modifyFieldsByFormid(@PathVariable Long formId, @RequestBody Req req) {
 		fieldService.update(
 				Wrappers.<Field>lambdaUpdate().eq(Field::getFormId, formId).set(Field::getContent, req.getContent()));
 
@@ -90,7 +97,7 @@ public class FormController {
 	}
 
 	@PostMapping("/form/{formId}/action/create")
-	public Resp createActionByObjid(@PathVariable Long formId, Req<String> req) {
+	public Resp createActionByObjid(@PathVariable Long formId, @RequestBody Req<String> req) {
 		FormSubmit formSubmit = new FormSubmit();
 		formSubmit.setFormId(formId);
 		formSubmit.setContent(req.getContent());
@@ -120,7 +127,7 @@ public class FormController {
 		return Resp.ok(list);
 	}
 
-	@PostMapping("/form/{formId}/action/{id}")
+	@PutMapping("/form/{formId}/action/{id}")
 	public Resp modifyActionByObjidAndId(@PathVariable Long formId, @PathVariable Long id, Req<String> req) {
 		formSubmitService.update(Wrappers.<FormSubmit>lambdaUpdate()
 			.eq(FormSubmit::getFormId, formId)
