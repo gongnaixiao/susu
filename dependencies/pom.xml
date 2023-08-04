@@ -10,14 +10,17 @@
     <packaging>pom</packaging>
 
     <properties>
-        <spring-boot.version>2.7.12</spring-boot.version>
-        <spring-cloud.version>2021.0.7</spring-cloud.version>
-        <spring-cloud-alibaba.version>2021.0.5.0</spring-cloud-alibaba.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+
+        <spring-boot.version>2.7.12</spring-boot.version>
+        <spring-cloud.version>2021.0.7</spring-cloud.version>
+        <spring-cloud-alibaba.version>2021.0.5.0</spring-cloud-alibaba.version>
         <spring-boot-admin.version>2.7.10</spring-boot-admin.version>
         <spring.authorization.version>0.4.2</spring.authorization.version>
+
+        <dubbo.verion>3.2.2</dubbo.verion>
         <dynamic-ds.version>3.6.0</dynamic-ds.version>
         <captcha.version>2.2.2</captcha.version>
         <velocity.version>2.3</velocity.version>
@@ -68,6 +71,13 @@
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
                 <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-bom</artifactId>
+                <version>${dubbo.verion}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

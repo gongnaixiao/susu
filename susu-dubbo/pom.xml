@@ -9,12 +9,14 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>susu-engine</artifactId>
+    <artifactId>susu-dubbo</artifactId>
     <packaging>pom</packaging>
-    <description>公共</description>
+    <description>dubbo服务</description>
     <modules>
-        <module>susu-engine-liteflow</module>
-        <module>susu-engine-datasource</module>
-        <module>susu-engine-core</module>
+        <module>susu-dubbo-consumer</module>
+        <module>susu-dubbo-provider</module>
+        <module>susu-dubbo-interface</module>
     </modules>
+
+
 </project>
