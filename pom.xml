@@ -64,6 +64,7 @@
         <module>susu-form-editor</module>
         <module>dependencies</module>
         <module>susu-dubbo</module>
+        <module>susu-admin</module>
     </modules>
 
     <build>
