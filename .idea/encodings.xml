@@ -29,6 +29,8 @@
     <file url="file://$PROJECT_DIR$/susu-engine/susu-engine-datasource/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/susu-engine/susu-engine-liteflow/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/susu-engine/susu-engine-liteflow/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/susu-example/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/susu-example/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/susu-form-editor/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/susu-form-editor/src/main/resources" charset="UTF-8" />
   </component>
