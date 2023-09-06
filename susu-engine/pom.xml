@@ -16,5 +16,6 @@
         <module>susu-engine-liteflow</module>
         <module>susu-engine-datasource</module>
         <module>susu-engine-core</module>
+        <module>susu-engine-async</module>
     </modules>
 </project>
