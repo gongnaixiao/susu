@@ -65,6 +65,7 @@
         <module>dependencies</module>
         <module>susu-dubbo</module>
         <module>susu-admin</module>
+        <module>susu-engine/susu-engine-async</module>
     </modules>
 
     <build>

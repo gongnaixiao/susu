@@ -10,7 +10,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
-public class Resp<T> implements Serializable {
+public class Rsp<T> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -26,40 +26,40 @@ public class Resp<T> implements Serializable {
 	@Setter
 	private T data;
 
-	public static <T> Resp<T> ok() {
+	public static <T> Rsp<T> ok() {
 		return restResult(null, CommonConstants.SUCCESS, null);
 	}
 
-	public static <T> Resp<T> ok(T data) {
+	public static <T> Rsp<T> ok(T data) {
 		return restResult(data, CommonConstants.SUCCESS, null);
 	}
 
-	public static <T> Resp<T> ok(T data, String msg) {
+	public static <T> Rsp<T> ok(T data, String msg) {
 		return restResult(data, CommonConstants.SUCCESS, msg);
 	}
 
-	public static <T> Resp<T> failed() {
+	public static <T> Rsp<T> failed() {
 		return restResult(null, CommonConstants.FAIL, null);
 	}
 
-	public static <T> Resp<T> failed(String msg) {
+	public static <T> Rsp<T> failed(String msg) {
 		return restResult(null, CommonConstants.FAIL, msg);
 	}
 
-	public static <T> Resp<T> failed(T data) {
+	public static <T> Rsp<T> failed(T data) {
 		return restResult(data, CommonConstants.FAIL, null);
 	}
 
-	public static <T> Resp<T> failed(T data, String msg) {
+	public static <T> Rsp<T> failed(T data, String msg) {
 		return restResult(data, CommonConstants.FAIL, msg);
 	}
 
-	public static <T> Resp<T> result(T data, int code, String msg) {
+	public static <T> Rsp<T> result(T data, int code, String msg) {
 		return restResult(data, code, msg);
 	}
 
-	public static <T> Resp<T> restResult(T data, int code, String msg) {
-		Resp<T> apiResult = new Resp<>();
+	public static <T> Rsp<T> restResult(T data, int code, String msg) {
+		Rsp<T> apiResult = new Rsp<>();
 		apiResult.setCode(code);
 		apiResult.setData(data);
 		apiResult.setMsg(msg);

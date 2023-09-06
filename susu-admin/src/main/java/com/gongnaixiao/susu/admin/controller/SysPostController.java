@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.gongnaixiao.susu.admin.entity.SysPost;
 import com.gongnaixiao.susu.admin.service.SysPostService;
-import com.gongnaixiao.susu.engine.core.util.Resp;
+import com.gongnaixiao.susu.engine.core.util.Rsp;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -20,8 +20,8 @@ public class SysPostController {
 	private final SysPostService sysPostService;
 
 	@GetMapping("/page")
-	public Resp getSysPostPage(Page page, SysPost sysPost) {
-		return Resp.ok(sysPostService.page(page, Wrappers.<SysPost>lambdaQuery()
+	public Rsp getSysPostPage(Page page, SysPost sysPost) {
+		return Rsp.ok(sysPostService.page(page, Wrappers.<SysPost>lambdaQuery()
 			.like(StrUtil.isNotBlank(sysPost.getPostName()), SysPost::getPostName, sysPost.getPostName())));
 	}
 
@@ -31,8 +31,8 @@ public class SysPostController {
 	 * @return R
 	 */
 	@GetMapping("/details/{postId}")
-	public Resp getById(@PathVariable("postId") Long postId) {
-		return Resp.ok(sysPostService.getById(postId));
+	public Rsp getById(@PathVariable("postId") Long postId) {
+		return Rsp.ok(sysPostService.getById(postId));
 	}
 
 	/**
@@ -41,8 +41,8 @@ public class SysPostController {
 	 * @return R
 	 */
 	@GetMapping("/details")
-	public Resp getDetails(SysPost query) {
-		return Resp.ok(sysPostService.getOne(Wrappers.query(query), false));
+	public Rsp getDetails(SysPost query) {
+		return Rsp.ok(sysPostService.getOne(Wrappers.query(query), false));
 	}
 
 	/**
@@ -51,8 +51,8 @@ public class SysPostController {
 	 * @return R
 	 */
 	@PostMapping
-	public Resp save(@RequestBody SysPost sysPost) {
-		return Resp.ok(sysPostService.save(sysPost));
+	public Rsp save(@RequestBody SysPost sysPost) {
+		return Rsp.ok(sysPostService.save(sysPost));
 	}
 
 	/**
@@ -61,8 +61,8 @@ public class SysPostController {
 	 * @return R
 	 */
 	@PutMapping
-	public Resp updateById(@RequestBody SysPost sysPost) {
-		return Resp.ok(sysPostService.updateById(sysPost));
+	public Rsp updateById(@RequestBody SysPost sysPost) {
+		return Rsp.ok(sysPostService.updateById(sysPost));
 	}
 
 	/**
@@ -71,8 +71,8 @@ public class SysPostController {
 	 * @return R
 	 */
 	@DeleteMapping
-	public Resp removeById(@RequestBody Long[] ids) {
-		return Resp.ok(sysPostService.removeBatchByIds(CollUtil.toList(ids)));
+	public Rsp removeById(@RequestBody Long[] ids) {
+		return Rsp.ok(sysPostService.removeBatchByIds(CollUtil.toList(ids)));
 	}
 
 }

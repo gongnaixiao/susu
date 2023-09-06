@@ -7,7 +7,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gongnaixiao.susu.engine.core.constant.CacheConstants;
 import com.gongnaixiao.susu.engine.core.constant.SecurityConstants;
-import com.gongnaixiao.susu.engine.core.util.Resp;
+import com.gongnaixiao.susu.engine.core.util.Rsp;
 import com.gongnaixiao.susu.gateway.common.exception.ValidateCodeException;
 import com.gongnaixiao.susu.gateway.common.util.WebUtils;
 import com.gongnaixiao.susu.gateway.config.GatewayConfigProperties;
@@ -67,7 +67,7 @@ public class ValidateCodeGatewayFilter extends AbstractGatewayFilterFactory<Obje
 				final String errMsg = e.getMessage();
 				return response.writeWith(Mono.create(monoSink -> {
 					try {
-						byte[] bytes = objectMapper.writeValueAsBytes(Resp.failed(errMsg));
+						byte[] bytes = objectMapper.writeValueAsBytes(Rsp.failed(errMsg));
 						DataBuffer dataBuffer = response.bufferFactory().wrap(bytes);
 
 						monoSink.success(dataBuffer);

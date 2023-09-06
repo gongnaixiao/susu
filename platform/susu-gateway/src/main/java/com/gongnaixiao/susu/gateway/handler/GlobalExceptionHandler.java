@@ -2,7 +2,7 @@ package com.gongnaixiao.susu.gateway.handler;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gongnaixiao.susu.engine.core.util.Resp;
+import com.gongnaixiao.susu.engine.core.util.Rsp;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.web.reactive.error.ErrorWebExceptionHandler;
@@ -40,7 +40,7 @@ public class GlobalExceptionHandler implements ErrorWebExceptionHandler {
 			DataBufferFactory bufferFactory = response.bufferFactory();
 			try {
 				log.warn("Error Spring Cloud Gateway : {} {}", exchange.getRequest().getPath(), ex.getMessage());
-				return bufferFactory.wrap(objectMapper.writeValueAsBytes(Resp.failed(ex.getMessage())));
+				return bufferFactory.wrap(objectMapper.writeValueAsBytes(Rsp.failed(ex.getMessage())));
 			}
 			catch (JsonProcessingException e) {
 				log.error("Error writing response", ex);
