@@ -7,25 +7,13 @@
         <groupId>com.gongnaixiao.susu</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
+    <packaging>pom</packaging>
+    <modules>
+        <module>spring-data-jdbc-example</module>
+        <module>spring-plugin-example</module>
+    </modules>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>susu-example</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.plugin</groupId>
-            <artifactId>spring-plugin-core</artifactId>
-            <version>2.0.0.RELEASE</version>
-        </dependency>
-
-        <!--undertow容器-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-undertow</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-    </dependencies>
 </project>
