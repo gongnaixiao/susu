@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    mysql:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/susu?useUnicode=true&characterEncoding=UTF-8&rewriteBatchedStatements=true&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull
+      username: root
+      password: root
+    postgres:
+      driver-class-name: org.postgresql.Driver
+      url: jdbc:postgresql://localhost:5432/susu
+      username: root
+      password: password

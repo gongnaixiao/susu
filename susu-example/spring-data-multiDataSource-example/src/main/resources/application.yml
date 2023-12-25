@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: spring-data-multiDataSource-example
+
+  profiles:
+    active: local
+
+server:
+  port: 9000
+
+logging:
+  config: classpath:logback-spring.xml
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

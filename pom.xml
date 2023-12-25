@@ -17,6 +17,10 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <properties>
+        <log-path>/logs</log-path>
+    </properties>
+
     <!-- 以下依赖 全局所有的模块都会引入  -->
     <dependencies>
         <!--配置文件处理器-->
