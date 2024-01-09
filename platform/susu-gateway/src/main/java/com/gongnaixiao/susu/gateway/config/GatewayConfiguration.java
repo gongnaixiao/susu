@@ -36,7 +36,7 @@ public class GatewayConfiguration {
 
 	@Bean
 	public ValidateCodeGatewayFilter validateCodeGatewayFilter(GatewayConfigProperties configProperties,
-			ObjectMapper objectMapper, RedisTemplate redisTemplate) {
+															   ObjectMapper objectMapper, RedisTemplate redisTemplate) {
 		return new ValidateCodeGatewayFilter(configProperties, objectMapper, redisTemplate);
 	}
 

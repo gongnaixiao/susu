@@ -13,6 +13,7 @@
         <module>spring-plugin-example</module>
         <module>spring-data-multiDataSource-example</module>
         <module>spring-data-r2dbc-example</module>
+        <module>redisson-example</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
 

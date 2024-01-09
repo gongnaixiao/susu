@@ -6,8 +6,6 @@ import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-import static com.gongnaixiao.susu.engine.async.timer.utils.Predicates.and;
-import static com.gongnaixiao.susu.engine.async.timer.utils.Predicates.or;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.StreamSupport.stream;
 
@@ -38,15 +36,15 @@ public interface Streams {
 	}
 
 	static <T, S extends Iterable<T>> S filterAll(S values, Predicate<T>... predicates) {
-		return filter(values, and(predicates));
+		return filter(values, Predicates.and(predicates));
 	}
 
 	static <T, S extends Iterable<T>> S filterAny(S values, Predicate<T>... predicates) {
-		return filter(values, or(predicates));
+		return filter(values, Predicates.or(predicates));
 	}
 
 	static <T> T filterFirst(Iterable<T> values, Predicate<T>... predicates) {
-		return stream(values.spliterator(), false).filter(and(predicates)).findFirst().orElse(null);
+		return stream(values.spliterator(), false).filter(Predicates.and(predicates)).findFirst().orElse(null);
 	}
 
 }

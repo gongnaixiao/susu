@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
+import java.util.List;
 
 @RestController
 public class CrudController {
@@ -53,6 +55,13 @@ public class CrudController {
         Blog blog1 = blogRepository.save(blog);
 
         return JSONUtil.toJsonStr(blog1);
+    }
+
+    @RequestMapping("/blog/list")
+    public String getBlogs() {
+        List<Blog> byTitle = blogRepository.findByTitle("jdbc");
+
+        return JSONUtil.toJsonStr(byTitle);
     }
 
 }
