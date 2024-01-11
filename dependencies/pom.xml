@@ -43,6 +43,7 @@
         <springdoc.version>1.6.9</springdoc.version>
         <swagger.core.version>2.2.0</swagger.core.version>
         <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
+        <mybatis.version>2.3.2</mybatis.version>
         <mysql.version>8.0.33</mysql.version>
         <seata.version>1.6.1</seata.version>
         <excel.version>1.2.6</excel.version>
@@ -169,6 +170,11 @@
                         <groupId>org.springframework.boot</groupId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
